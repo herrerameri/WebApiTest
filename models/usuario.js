@@ -9,12 +9,12 @@ const UsuarioSchema = Schema({
 	surname: String,
 	alias: { type: String, required: true},
 	age: Number,
-	id: Number,
+	id: { type: Number, required: true},
 	phone: Number,
-	group:  {
-		self: String,
-		name: String
-	},
+	group:{
+					type: mongoose.Schema.Types.ObjectId,
+	        ref: 'Grupo'
+			},
 	photo: String,
 });
 
