@@ -222,7 +222,7 @@ app.post('/rest/grupo', (req, res) => {
 	});
 });
 
-mongoose.connect('mongodb://localhost:27017/usuarios', (err,res) => {
+mongoose.connect('mongodb://'+process.env.MONGO_URL+':27017/usuarios', (err,res) => {
 	if(err)	return console.log(`Error al conectar con la BD, detalles: ${err}.`);
 	console.log('Conexión a BD establecida.');
 
